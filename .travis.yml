@@ -1,0 +1,23 @@
+sudo: required
+dist: trusty
+
+language: python
+python:
+  - 3.5
+
+
+install:
+  # Install code sniffer.
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.5 ]]; then
+    pip install pycodestyle;
+    pip install --upgrade pycodestyle;
+    source ~/.bash_profile;
+    source ~/.bashrc;
+    fi
+
+
+script:
+  # Run code sniffer on the server directory.
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.5 ]]; then
+    pycodestyle --show-source --max-line-length=119 --exclude=server/pension/migrations --show-pep8 server;
+    fi
