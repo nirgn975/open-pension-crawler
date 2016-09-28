@@ -2,22 +2,16 @@ sudo: required
 dist: trusty
 
 language: python
-python:
-  - 3.5
-
+python: 3.5
 
 install:
   # Install code sniffer.
-  - if [[ $TRAVIS_PYTHON_VERSION == 3.5 ]]; then
     pip install pycodestyle;
     pip install --upgrade pycodestyle;
     source ~/.bash_profile;
     source ~/.bashrc;
-    fi
-
 
 script:
   # Run code sniffer on the scraper directory.
-  - if [[ $TRAVIS_PYTHON_VERSION == 3.5 ]]; then
     pycodestyle --show-source --max-line-length=119 --show-pep8 .
-    fi
+    
