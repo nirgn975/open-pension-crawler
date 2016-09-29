@@ -6,12 +6,11 @@ python: 3.5
 
 install:
   # Install code sniffer.
-    pip install pycodestyle;
-    pip install --upgrade pycodestyle;
-    source ~/.bash_profile;
-    source ~/.bashrc;
+  - pip install pycodestyle
+  - pip install --upgrade pycodestyle
+  - source ~/.bash_profile
+  - source ~/.bashrc
 
 script:
   # Run code sniffer on the scraper directory.
-    pycodestyle --show-source --max-line-length=119 --show-pep8 .
-    
+  - pycodestyle --show-source --max-line-length=119 --show-pep8 .
