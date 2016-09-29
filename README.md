@@ -1,21 +1,18 @@
-Open Pension Scraper
-
-
+# Open Pension Scraper
 The repo contains Scraper and Data from Investment firms, in use for the Open Pension project. Open Pension is a "Hasadna" project, that aimed to revealing the secrets behind the Israeli pension market.
 
-Pre Requirements
+## Pre Requirements
 
-    Make sure you have Python 3.x and pip installed.
-    NodeJS.
+* Make sure you have Python 3.x and pip installed.
 
-Installation
+## Installation
 
-    Not yet.
+Not yet.
 
-Tests
+## Tests
 
-    Not yet.
+Not yet.
 
-Contribute
+## Contribute
 
 Just fork and do a pull request (;
