@@ -1,6 +1,6 @@
 # Open Pension Scraper
 
-[![Build Status][travis-image]][travis-url] [![Join the chat at https://gitter.im/open-pension/Lobby][gitter-image]][gitter-url]
+[![Build Status][travis-image]][travis-url]
 
 The repo contains Scraper and Data from Investment firms, in use for the Open Pension project. Open Pension is a "Hasadna" project, that aimed to revealing the secrets behind the Israeli pension market.
 
@@ -19,3 +19,8 @@ Not yet.
 ## Contribute
 
 Just fork and do a pull request (;
+
+
+[travis-image]: https://travis-ci.org/hasadna/open_pension.svg?branch=master
+[travis-url]: https://travis-ci.org/hasadna/open_pension
+
