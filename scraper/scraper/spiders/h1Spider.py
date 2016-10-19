@@ -1,7 +1,6 @@
 from scrapy.selector import Selector
 from scrapy.http import HtmlResponse
 import scrapy
-
 class QuotesSpider(scrapy.Spider):
     name = "h1"
     def start_requests(self):
@@ -10,6 +9,7 @@ class QuotesSpider(scrapy.Spider):
         ]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
+
     def parse(self, response):
         filename = "h1 headers"
         with open(filename, 'wb') as f:
