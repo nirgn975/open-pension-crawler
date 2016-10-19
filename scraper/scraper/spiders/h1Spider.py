@@ -17,4 +17,3 @@ class QuotesSpider(scrapy.Spider):
         filename = "h1 headers"
         with open(filename, 'wb') as f:
             f.write(response.xpath("//h1/text()")[0].extract())
-            
