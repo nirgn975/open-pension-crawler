@@ -14,6 +14,5 @@ class QuotesSpider(scrapy.Spider):
             yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
-        #header = response.xpath("//h1/text()")[0].extract()
         header = Selector(response).xpath('//h1/text()')
         print(header)
