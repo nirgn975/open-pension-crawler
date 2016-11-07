@@ -3,7 +3,7 @@ from scrapy.http import HtmlResponse
 import scrapy
 
 
-class QuotesSpider(scrapy.Spider):
+class PensionSpider(scrapy.Spider):
     name = "h1"
 
     def start_requests(self):
@@ -15,4 +15,4 @@ class QuotesSpider(scrapy.Spider):
 
     def parse(self, response):
         header = Selector(response).xpath('//h1/text()')
-        print(header)
+        
