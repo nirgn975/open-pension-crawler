@@ -15,4 +15,3 @@ class PensionSpider(scrapy.Spider):
 
     def parse(self, response):
         header = Selector(response).xpath('//h1/text()')
-        
