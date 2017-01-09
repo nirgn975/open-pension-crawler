@@ -10,7 +10,9 @@ The repo contains Scraper and Data from Investment firms, in use for the Open Pe
 
 ## Installation
 
+```
 pip install -r requirements.txt.
+```
 
 ## Tests
 
