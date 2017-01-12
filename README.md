@@ -2,7 +2,7 @@
 
 [![license][license-image]][license-url] [![Build Status][travis-image]][travis-url]
 
-The repo contains Scraper and Data from Investment firms, in use for the Open Pension project. Open Pension is a "Hasadna" project, that aimed to revealing the secrets behind the Israeli pension market.
+The repo contains Crawler and Data from Investment firms, in use for the Open Pension project. Open Pension is a "Hasadna" project, that aimed to revealing the secrets behind the Israeli pension market.
 
 ## Pre Requirements
 
@@ -13,6 +13,10 @@ The repo contains Scraper and Data from Investment firms, in use for the Open Pe
 ```
 pip install -r requirements.txt.
 ```
+
+## Run
+
+* To run yl crawler `scrapy crawl jilin_lapidot -o jilin_lapidot.json`
 
 ## Tests
 

@@ -8,7 +8,7 @@
 import scrapy
 
 
-class ScraperItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class OpenPensionCrawlerItem(scrapy.Item):
+    # The fields for out item
+    file_name = scrapy.Field()
+    page_url = scrapy.Field()
