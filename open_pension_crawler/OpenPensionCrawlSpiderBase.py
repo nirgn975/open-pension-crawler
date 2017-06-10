@@ -1,6 +1,10 @@
+import pdb
+import pprint
 from pathlib import Path
 import re
 import urllib.request
+from urllib.error import URLError
+
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 
@@ -17,7 +21,7 @@ class OpenPensionCrawlSpiderBase(CrawlSpider):
 
     rules = (
         # Extract 'href' and 'ng-href' links and parse them with the spider's method parse_item.
-        Rule(LinkExtractor(attrs=['href', 'ng-href']), callback="parse_item", follow=True),
+        Rule(LinkExtractor(attrs=['href', 'ng-href']), callback="parse_item", follow=True, ),
     )
 
     def parse_item(self, response):
@@ -42,10 +46,7 @@ class OpenPensionCrawlSpiderBase(CrawlSpider):
                 Path(folder).mkdir(parents=True, exist_ok=True)
 
                 # Download the file.
-                try:
-                    urllib.request.urlretrieve(download_url, path_to_save_file)
-                except TimeoutError as error:
-                    print(error)
+                urllib.request.urlretrieve(download_url, path_to_save_file)
 
                 # Save the data.
                 yield {
