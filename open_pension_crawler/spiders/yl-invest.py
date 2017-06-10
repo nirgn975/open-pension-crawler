@@ -10,8 +10,7 @@ class YlInvestSpider(CrawlSpider):
     allowed_domains = ['yl-invest.co.il']
     start_urls = ['http://www.yl-invest.co.il']
     rules = (
-        # Extract 'href' and 'ng-href' links and parse them with the spider's
-        # method parse_item.
+        # Extract 'href' and 'ng-href' links and parse them with the spider's method parse_item.
         Rule(LinkExtractor(attrs=['href', 'ng-href']), callback="parse_item", follow=True),
     )
 
