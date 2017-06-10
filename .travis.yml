@@ -13,4 +13,5 @@ install:
 
 script:
   # Run code sniffer on the scraper directory.
+  - pwd
   - pycodestyle --show-source --max-line-length=119 --exclude=./open_pension_crawler/settings.py --show-pep8 .
