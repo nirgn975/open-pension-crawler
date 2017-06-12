@@ -1,9 +1,8 @@
 import pdb
-import pprint
+import requests
 from pathlib import Path
 import re
 import urllib.request
-from urllib.error import URLError
 
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
@@ -45,8 +44,10 @@ class OpenPensionCrawlSpiderBase(CrawlSpider):
                 path_to_save_file = '{}/{}'.format(folder, file_name)
                 Path(folder).mkdir(parents=True, exist_ok=True)
 
-                # Download the file.
-                urllib.request.urlretrieve(download_url, path_to_save_file)
+                with open(path_to_save_file, 'wb') as f:
+                    resp = requests.get(download_url, verify=False)
+                    f.write(resp.content)
+                    f.close()
 
                 # Save the data.
                 yield {
