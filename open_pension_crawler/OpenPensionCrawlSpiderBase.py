@@ -1,6 +1,9 @@
+import pdb
+import requests
 from pathlib import Path
 import re
 import urllib.request
+
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 
@@ -17,7 +20,7 @@ class OpenPensionCrawlSpiderBase(CrawlSpider):
 
     rules = (
         # Extract 'href' and 'ng-href' links and parse them with the spider's method parse_item.
-        Rule(LinkExtractor(attrs=['href', 'ng-href']), callback="parse_item", follow=True),
+        Rule(LinkExtractor(attrs=['href', 'ng-href']), callback="parse_item", follow=True, ),
     )
 
     def parse_item(self, response):
@@ -41,11 +44,10 @@ class OpenPensionCrawlSpiderBase(CrawlSpider):
                 path_to_save_file = '{}/{}'.format(folder, file_name)
                 Path(folder).mkdir(parents=True, exist_ok=True)
 
-                # Download the file.
-                try:
-                    urllib.request.urlretrieve(download_url, path_to_save_file)
-                except TimeoutError as error:
-                    print(error)
+                with open(path_to_save_file, 'wb') as f:
+                    resp = requests.get(download_url, verify=False)
+                    f.write(resp.content)
+                    f.close()
 
                 # Save the data.
                 yield {
