@@ -37,20 +37,5 @@ class OpenPensionCrawlSpiderBase(CrawlSpider):
                 # Create the url to download the file.
                 download_url = response.urljoin(url)
 
-                # Create the name of the file.
-                file_path = url_path[0].split('/')
-                file_name = self.file_prefix + '{}.{}'.format(file_path[len(file_path) - 1], url_path[1])
-                folder = '{}/{}'.format('./files', str(self.name))
-                path_to_save_file = '{}/{}'.format(folder, file_name)
-                Path(folder).mkdir(parents=True, exist_ok=True)
+                # Add the link into the DB.
 
-                with open(path_to_save_file, 'wb') as f:
-                    resp = requests.get(download_url, verify=False)
-                    f.write(resp.content)
-                    f.close()
-
-                # Save the data.
-                yield {
-                    'file_name': file_name,
-                    'page_url': download_url,
-                }
