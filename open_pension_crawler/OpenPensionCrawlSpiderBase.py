@@ -29,23 +29,20 @@ class OpenPensionCrawlSpiderBase(CrawlSpider):
             url = url.extract()
 
             if re.search(self.regex, url):
-                url_path = url.split('.')
-
                 # Create the url to download the file.
 
-                # Fields:
-                # url
-                # fund_body
-                # scrapped_date
-                # quarter_and_year
+                matches = re.findall(r'(.*)_(.+?).(xlsx|xls)', url)
 
                 object = {
                     'url': response.urljoin(url),
                     'fund_body': self.name,
                     'scrapped_date': int(time.time()),
+                    'quarter': matches[0][1][0] + "" + matches[0][1][1],
+                    'year': matches[0][1][2] + "" + matches[0][1][3],
                 }
 
+                # Post to open pension.
+                print("--------\n")
                 print(object)
-
-                # Add the link into the DB.
+                print("--------\n")
 
