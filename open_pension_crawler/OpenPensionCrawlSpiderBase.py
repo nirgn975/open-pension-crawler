@@ -1,8 +1,5 @@
-import pdb
-import requests
-from pathlib import Path
 import re
-import urllib.request
+import time
 
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
@@ -35,7 +32,20 @@ class OpenPensionCrawlSpiderBase(CrawlSpider):
                 url_path = url.split('.')
 
                 # Create the url to download the file.
-                download_url = response.urljoin(url)
+
+                # Fields:
+                # url
+                # fund_body
+                # scrapped_date
+                # quarter_and_year
+
+                object = {
+                    'url': response.urljoin(url),
+                    'fund_body': self.name,
+                    'scrapped_date': int(time.time()),
+                }
+
+                print(object)
 
                 # Add the link into the DB.
 
