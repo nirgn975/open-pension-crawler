@@ -16,6 +16,7 @@ pip install -r requirements.txt.
 
 ## Run
 
+* To run `amitim` crawler `scrapy crawl amitim -o amitim.json`
 * To run `yl-invest` crawler `scrapy crawl yl-invest -o yl-invest.json`
 * To run `as-invest` crawler `scrapy crawl as-invest -o as-invest.json`
 * To run `clalbit` crawler `scrapy crawl clalbit -o clalbit.json`

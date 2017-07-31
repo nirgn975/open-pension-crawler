@@ -30,7 +30,6 @@ class OpenPensionCrawlSpiderBase(CrawlSpider):
 
             if re.search(self.regex, url):
                 # Create the url to download the file.
-
                 matches = re.findall(r'(.*)_(.+?).(xlsx|xls)', url)
 
                 object = {
@@ -45,4 +44,3 @@ class OpenPensionCrawlSpiderBase(CrawlSpider):
                 print("--------\n")
                 print(object)
                 print("--------\n")
-
