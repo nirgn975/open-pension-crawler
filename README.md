@@ -20,6 +20,7 @@ pip install -r requirements.txt.
 * To run `yl-invest` crawler `scrapy crawl yl-invest -o yl-invest.json`
 * To run `as-invest` crawler `scrapy crawl as-invest -o as-invest.json`
 * To run `clalbit` crawler `scrapy crawl clalbit -o clalbit.json`
+* To run `metiav dash` crawler `scrapy crawl meitav_dash -o meitav_dash.json` (not working)
 
 ## Tests
 
