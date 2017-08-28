@@ -22,6 +22,7 @@ pip install -r requirements.txt.
 * To run `clalbit` crawler `scrapy crawl clalbit -o clalbit.json`
 * To run `metiav dash` crawler `scrapy crawl meitav_dash -o meitav_dash.json` (not working)
 * To run `fnx` crawler `scrapy crawl fnx -o fnx.json`
+* To run `harel` crawler `scrapy crawl harel -o harel.json` (not working now)
 
 ## Tests
 
