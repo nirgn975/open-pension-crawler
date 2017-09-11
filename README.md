@@ -16,13 +16,14 @@ pip install -r requirements.txt.
 
 ## Run
 
-* To run `amitim` crawler `scrapy crawl amitim -o amitim.json`
-* To run `yl-invest` crawler `scrapy crawl yl-invest -o yl-invest.json`
-* To run `as-invest` crawler `scrapy crawl as-invest -o as-invest.json`
-* To run `clalbit` crawler `scrapy crawl clalbit -o clalbit.json`
-* To run `metiav dash` crawler `scrapy crawl meitav_dash -o meitav_dash.json` (not working)
-* To run `fnx` crawler `scrapy crawl fnx -o fnx.json`
-* To run `harel` crawler `scrapy crawl harel -o harel.json` (not working now)
+* To run `amitim` crawler `scrapy crawl amitim`
+* To run `yl-invest` crawler `scrapy crawl yl-invest`
+* To run `as-invest` crawler `scrapy crawl as-invest`
+* To run `clalbit` crawler `scrapy crawl clalbit`
+* To run `metiav dash` crawler `scrapy crawl meitav_dash` (not working)
+* To run `fnx` crawler `scrapy crawl fnx`
+* To run `harel` crawler `scrapy crawl harel` (not working now)
+* To run `menora` crawler `scrapy crawl menora` (not working now)
 
 ## Tests
 
