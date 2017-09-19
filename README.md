@@ -24,6 +24,7 @@ pip install -r requirements.txt.
 * To run `fnx` crawler `scrapy crawl fnx`
 * To run `harel` crawler `scrapy crawl harel` (not working now)
 * To run `menora` crawler `scrapy crawl menora` (not working now)
+* To run `migdal` crawler `scrapy crawl migdal`
 
 ## Tests
 
