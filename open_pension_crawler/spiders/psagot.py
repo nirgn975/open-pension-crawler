@@ -1,7 +1,7 @@
 from open_pension_crawler.OpenPensionCrawlSpiderBase import OpenPensionCrawlSpiderBase
 
 
-class YlInvestSpider(OpenPensionCrawlSpiderBase):
+class PsagotSpider(OpenPensionCrawlSpiderBase):
     name = 'psagot'
     allowed_domains = ['psagot.co.il']
     start_urls = ['https://www.psagot.co.il/heb/PensionSavings/GeneralInformation/Pages/gemelcompanyreports.aspx']
