@@ -26,6 +26,7 @@ pip install -r requirements.txt.
 * To run `menora` crawler `scrapy crawl menora` (not working now)
 * To run `migdal` crawler `scrapy crawl migdal`
 * To run `psagot` crawler `scrapy crawl psagot`
+* To run `xnes` crawler `scrapy crawl xnes` (not working now)
 
 ## Tests
 
