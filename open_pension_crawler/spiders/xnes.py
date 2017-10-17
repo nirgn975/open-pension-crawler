@@ -5,4 +5,4 @@ class XnesSpider(OpenPensionCrawlSpiderBase):
     name = 'xnes'
     allowed_domains = ['xnes.co.il']
     start_urls = ['https://www.xnes.co.il/pension/About/Statements.aspx']
-    regex = r'(.*)gsum_(01|02|03|04)[0-9]{2}.(xlsx|xls)'
+    regex = r'(.*)gsum_(.*).(xlsx|xls)'
