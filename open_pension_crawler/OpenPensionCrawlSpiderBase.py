@@ -1,8 +1,5 @@
-import pdb
-import requests
-from pathlib import Path
 import re
-import urllib.request
+import time
 
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
@@ -32,25 +29,18 @@ class OpenPensionCrawlSpiderBase(CrawlSpider):
             url = url.extract()
 
             if re.search(self.regex, url):
-                url_path = url.split('.')
-
                 # Create the url to download the file.
-                download_url = response.urljoin(url)
+                matches = re.findall(r'(.*)_(.+?).(xlsx|xls)', url)
 
-                # Create the name of the file.
-                file_path = url_path[0].split('/')
-                file_name = self.file_prefix + '{}.{}'.format(file_path[len(file_path) - 1], url_path[1])
-                folder = '{}/{}'.format('./files', str(self.name))
-                path_to_save_file = '{}/{}'.format(folder, file_name)
-                Path(folder).mkdir(parents=True, exist_ok=True)
-
-                with open(path_to_save_file, 'wb') as f:
-                    resp = requests.get(download_url, verify=False)
-                    f.write(resp.content)
-                    f.close()
-
-                # Save the data.
-                yield {
-                    'file_name': file_name,
-                    'page_url': download_url,
+                object = {
+                    'url': response.urljoin(url),
+                    'fund_body': self.name,
+                    'scrapped_date': int(time.time()),
+                    'quarter': matches[0][1][0] + "" + matches[0][1][1],
+                    'year': matches[0][1][2] + "" + matches[0][1][3],
                 }
+
+                # Post to open pension.
+                print("--------\n")
+                print(object)
+                print("--------\n")
